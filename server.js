@@ -124,7 +124,7 @@ slapp.message('google', ['direct_message'], (msg, text) => {
      url: 'https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start',
      method: 'POST',
      header: {
-       'Authorization': 'Bearer ya29.GlxbBM81WaxltnBiYtI-4oWF07nbcJ4ZyojZQF8z1p0QFXf-caAzqFHMId3Wh2d-2okI8k2swQwF4loBNB2Mieo7pY4e1K9Ne6GWG_R7U6uF9s59ChOQukhytZ6Auw'     
+       'Authorization': 'Bearer ya29.GlxbBHxVZWk9o1UyRBvKPnUu0TqjzCETZClVd5RvVFO5F22vAQqZp5zv3HlqkhK3Zp6xvM8gGivP1ZocUOS_WdGQL5_-lRegVttMmO_745cSg3adqSa6pS0042OAgw'     
      }
    }
                  
