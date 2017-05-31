@@ -113,7 +113,12 @@ slapp.message('repeat', ['direct_message'], (msg, text) => {
   
   var content = (msg.body.event && msg.body.event.text) || ''
   
-   msg.say(content)
+  
+  var arr = content.split(" ").map(function (val) {
+    return val;
+  });
+  
+   msg.say(arr[1])
   
   console.log(msg)
 })
