@@ -116,19 +116,18 @@ slapp.message('google', ['direct_message'], (msg) => {
           console.log(error)
           return msg.say('oh error')
       }
-
     
-    console.log(response)
-    console.log(body)
+//    console.log(response)
+//    console.log(body)
     
      // const data = JSON.parse(body)
-      txt = body
+  //    txt = body
   })
   
   // respond simply  
   msg
-    .say('google is starting your instance.')
-    .say(txt)
+    .say('google is now starting your instance.')
+    //.say(txt)
 })
 
 // Catch-all for any other responses not handled above
