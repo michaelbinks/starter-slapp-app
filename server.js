@@ -108,8 +108,22 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 })
 
 slapp.message('google', ['direct_message'], (msg) => {
+  // fire request
+  var txt = ''
+  
+  Request.get('https://touch.carfinance247.co.uk', function (error, response, body) {
+      if (error) {
+          return msg.say('error: ' + error)
+      }
+
+      const data = JSON.parse(body)
+      txt = data
+  })
+  
   // respond simply  
-  msg.say('Hello google.')  
+  msg
+    .say('google is starting your instance.')
+    .say(data)
 })
 
 // Catch-all for any other responses not handled above
