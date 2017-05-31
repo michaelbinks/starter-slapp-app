@@ -113,9 +113,14 @@ slapp.message('google', ['direct_message'], (msg) => {
   
   Request.get('https://touch.carfinance247.co.uk', function (error, response, body) {
       if (error) {
-          return msg.say('error: ' + error)
+          console.log(error)
+          return msg.say('oh error')
       }
 
+    
+    console.log(response)
+    console.log(body)
+    
      // const data = JSON.parse(body)
       txt = body
   })
