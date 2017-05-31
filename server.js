@@ -24,7 +24,7 @@ I will respond to the following messages:
 \`thanks\` - to demonstrate a simple response.
 \`<type-any-other-text>\` - to demonstrate a random emoticon response, some of the time :wink:.
 \`attachment\` - to see a Slack attachment message.
-\'google\' - to start an instance
+\`google <auth-token>\` - to start the default instance.
 `
 
 //*********************************************
