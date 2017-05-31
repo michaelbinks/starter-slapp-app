@@ -114,19 +114,30 @@ slapp.message('google', ['direct_message'], (msg, text) => {
   console.log('token: ' + text)
   
   // fire request
-  var gcpData = ''
-  Request.post('https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start', function (error, response, body) {
+  var gcpData = '',
+   url = 'https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start',
+   auth = {
+  'auth': {
+    'bearer': 'ya29.GlxbBM81WaxltnBiYtI-4oWF07nbcJ4ZyojZQF8z1p0QFXf-caAzqFHMId3Wh2d-2okI8k2swQwF4loBNB2Mieo7pY4e1K9Ne6GWG_R7U6uF9s59ChOQukhytZ6Auw'
+  }
+  
+  Request.post({url, auth}, function (error, response, body) {
       if (error) {
           console.log(error)
           return msg.say('oh error')
       }
     
-    console.log(response)
-    console.log(' - - - - - - - - -')
-    console.log(body)
-    
+    console.log(body)    
     gcpData = JSON.parse(body)
-            
+        
+      if (gcpData.errors) {
+          console.log(gcpData.errors)
+          return msg.say('problem with request')
+      }   
+    
+      if (response && response.statusCode === 401) {          
+          return msg.say('Not Auth')
+      }
   })
   
   // respond simply  
