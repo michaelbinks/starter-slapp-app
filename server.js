@@ -109,7 +109,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 slapp.message('google', ['direct_message'], (msg) => {
   // fire request
-  var txt = ''
+  var respText = ''
   
   Request.get('https://touch.carfinance247.co.uk', function (error, response, body) {
       if (error) {
@@ -120,7 +120,7 @@ slapp.message('google', ['direct_message'], (msg) => {
 //    console.log(response)
         
      // const data = JSON.parse(body)
-    txt = body        
+    respText = body        
   })
   
   // respond simply  
@@ -128,7 +128,7 @@ slapp.message('google', ['direct_message'], (msg) => {
     .say('txt')
     .say('google is now starting your instance.')
   
-  console.log(txt)
+  console.log(respText)
 })
 
 // Catch-all for any other responses not handled above
