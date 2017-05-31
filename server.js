@@ -23,6 +23,7 @@ I will respond to the following messages:
 \`thanks\` - to demonstrate a simple response.
 \`<type-any-other-text>\` - to demonstrate a random emoticon response, some of the time :wink:.
 \`attachment\` - to see a Slack attachment message.
+\'google\' - to start an instance
 `
 
 //*********************************************
@@ -103,6 +104,11 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
       color: '#7CD197'
     }]
   })
+})
+
+slapp.message('google', ['direct_message'], (msg) => {
+  // respond simply  
+  msg.say('Hello google.')  
 })
 
 // Catch-all for any other responses not handled above
