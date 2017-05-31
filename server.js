@@ -148,7 +148,7 @@ slapp.message('google', ['direct_message'], (msg, text) => {
   })
   
   // respond simply  
-  msg.say('google is now starting your instance.')
+  msg.say('google is now starting the instance.')
   
   //PARSE DATA REPSONSE
   console.log(gcpData)
