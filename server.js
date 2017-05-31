@@ -107,28 +107,28 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
   })
 })
 
-slapp.message('google', ['direct_message'], (msg) => {
-  // fire request
-  var respText = ''
+slapp.message('google', ['direct_message'], (msg, token) => {
   
-  Request.get('https://touch.carfinance247.co.uk', function (error, response, body) {
+  //pass in the token
+  console.log('token: ' + token)
+  
+  // fire request
+  var gcpData = ''
+  Request.post('https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start', function (error, response, body) {
       if (error) {
           console.log(error)
           return msg.say('oh error')
       }
-    
-//    console.log(response)
-        
-     // const data = JSON.parse(body)
-    respText = body        
+            
+    gcpData = JSON.parse(body)
+            
   })
   
   // respond simply  
-  msg    
-    .say('txt')
-    .say('google is now starting your instance.')
+  msg.say('google is now starting your instance.')
   
-  console.log(respText)
+  //PARSE DATA REPSONSE
+  console.log(gcpData)
 })
 
 // Catch-all for any other responses not handled above
