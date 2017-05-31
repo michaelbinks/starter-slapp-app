@@ -127,7 +127,7 @@ slapp.message('google', ['direct_message'], (msg) => {
   // respond simply  
   msg
     .say('google is now starting your instance.')
-    //.say(txt)
+    .say(txt)
 })
 
 // Catch-all for any other responses not handled above
