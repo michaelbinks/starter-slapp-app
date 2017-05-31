@@ -110,7 +110,12 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 
 slapp.message('repeat', ['direct_message'], (msg, text) => {
-   msg.say(text)
+  
+  var content = (msg.body.event && msg.body.event.text) || ''
+  
+   msg.say(content)
+  
+  console.log(msg)
 })
 
 
