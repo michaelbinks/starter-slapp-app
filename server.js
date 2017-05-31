@@ -109,7 +109,9 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 
 
-
+slapp.message('repeat', ['direct_message'], (msg, text) => {
+   msg.say(text)
+})
 
 
 slapp.message('google', ['direct_message'], (msg, text) => {
@@ -147,7 +149,6 @@ slapp.message('google', ['direct_message'], (msg, text) => {
   // respond simply  
   msg.say('google is now starting the instance.')
   
-  //PARSE DATA REPSONSE
   console.log(gcpData)
 })
 
