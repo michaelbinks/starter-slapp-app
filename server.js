@@ -128,7 +128,7 @@ slapp.message('google', ['direct_message'], (msg, text) => {
      }
    }
                  
-  Request.post(options, function (error, response, body) {
+  Request(options, function (error, response, body) {
       if (error) {
           console.log(error)
           return msg.say('oh error')
