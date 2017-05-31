@@ -107,10 +107,11 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
   })
 })
 
-slapp.message('google', ['direct_message'], (msg, token) => {
+slapp.message('google', ['direct_message'], (msg, text) => {
   
   //pass in the token
-  console.log('token: ' + token)
+  console.log('token: ' + msg)
+  console.log('token: ' + text)
   
   // fire request
   var gcpData = ''
@@ -119,7 +120,11 @@ slapp.message('google', ['direct_message'], (msg, token) => {
           console.log(error)
           return msg.say('oh error')
       }
-            
+    
+    console.log(response)
+    console.log(' - - - - - - - - -')
+    console.log(body)
+    
     gcpData = JSON.parse(body)
             
   })
