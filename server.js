@@ -109,20 +109,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 
 
-slapp.message('repeat', ['direct_message'], (msg, text) => {
-  
-  var content = (msg.body.event && msg.body.event.text) || ''    
-  var arr = content.split(" ").map(function (val) {
-    return val;
-  });
-  
-  msg.say(arr[1])
-  
-  console.log(msg)
-})
-
-
-slapp.message('google', ['direct_message'], (msg, text) => {
+slapp.message('google', ['direct_mention', 'direct_message'], (msg, text) => {
   
   //pass in the token
   var content = (msg.body.event && msg.body.event.text) || ''    
