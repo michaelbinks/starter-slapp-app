@@ -118,10 +118,10 @@ slapp.message('google', ['direct_message'], (msg) => {
       }
     
 //    console.log(response)
-//    console.log(body)
+    console.log(body)
     
      // const data = JSON.parse(body)
-  //    txt = body
+    txt = body
   })
   
   // respond simply  
