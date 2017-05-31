@@ -120,11 +120,14 @@ slapp.message('google', ['direct_message'], (msg, text) => {
   
   // fire request
   var gcpData = '',
-   url = 'https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start',
-   auth = {
-    'Authorization': { 'Bearer': 'ya29.GlxbBM81WaxltnBiYtI-4oWF07nbcJ4ZyojZQF8z1p0QFXf-caAzqFHMId3Wh2d-2okI8k2swQwF4loBNB2Mieo7pY4e1K9Ne6GWG_R7U6uF9s59ChOQukhytZ6Auw' }
+   options = {     
+     url = 'https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start',
+     method: 'POST',
+     header: {
+       'Authorization': 'Bearer ya29.GlxbBM81WaxltnBiYtI-4oWF07nbcJ4ZyojZQF8z1p0QFXf-caAzqFHMId3Wh2d-2okI8k2swQwF4loBNB2Mieo7pY4e1K9Ne6GWG_R7U6uF9s59ChOQukhytZ6Auw'     
+     }
    }
-  
+                 
   Request.post({url, auth}, function (error, response, body) {
       if (error) {
           console.log(error)
