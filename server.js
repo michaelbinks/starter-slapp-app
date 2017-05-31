@@ -107,6 +107,11 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
   })
 })
 
+
+
+
+
+
 slapp.message('google', ['direct_message'], (msg, text) => {
   
   //pass in the token
@@ -117,7 +122,7 @@ slapp.message('google', ['direct_message'], (msg, text) => {
   var gcpData = '',
    url = 'https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start',
    auth = {
-    'auth': { 'bearer': 'ya29.GlxbBM81WaxltnBiYtI-4oWF07nbcJ4ZyojZQF8z1p0QFXf-caAzqFHMId3Wh2d-2okI8k2swQwF4loBNB2Mieo7pY4e1K9Ne6GWG_R7U6uF9s59ChOQukhytZ6Auw' }
+    'Authorization': { 'bearer': 'ya29.GlxbBM81WaxltnBiYtI-4oWF07nbcJ4ZyojZQF8z1p0QFXf-caAzqFHMId3Wh2d-2okI8k2swQwF4loBNB2Mieo7pY4e1K9Ne6GWG_R7U6uF9s59ChOQukhytZ6Auw' }
    }
   
   Request.post({url, auth}, function (error, response, body) {
