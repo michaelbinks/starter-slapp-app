@@ -111,14 +111,12 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 
 slapp.message('repeat', ['direct_message'], (msg, text) => {
   
-  var content = (msg.body.event && msg.body.event.text) || ''
-  
-  
+  var content = (msg.body.event && msg.body.event.text) || ''    
   var arr = content.split(" ").map(function (val) {
     return val;
   });
   
-   msg.say(arr[1])
+  msg.say(arr[1])
   
   console.log(msg)
 })
@@ -127,15 +125,19 @@ slapp.message('repeat', ['direct_message'], (msg, text) => {
 slapp.message('google', ['direct_message'], (msg, text) => {
   
   //pass in the token
-  console.log('msg: ' + msg)
-  console.log('text: ' + text)
+  var content = (msg.body.event && msg.body.event.text) || ''    
+  var arr = content.split(" ").map(function (val) {
+    return val;
+  });
+  
+  var authToken = arr[1]  
   
   // fire request
   var options = { method: 'POST',
    url: 'https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start',
    headers: 
     { 'cache-control': 'no-cache',
-      authorization: 'Bearer ya29.GlxbBHxVZWk9o1UyRBvKPnUu0TqjzCETZClVd5RvVFO5F22vAQqZp5zv3HlqkhK3Zp6xvM8gGivP1ZocUOS_WdGQL5_-lRegVttMmO_745cSg3adqSa6pS0042OAgw' } 
+      authorization: 'Bearer ' + authToken } 
     }
 
   var gcpData = ''
