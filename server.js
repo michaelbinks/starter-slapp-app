@@ -116,7 +116,7 @@ slapp.message('google', ['direct_message'], (msg) => {
           return msg.say('error: ' + error)
       }
 
-      const data = JSON.parse(body)
+     // const data = JSON.parse(body)
       txt = body
   })
   
