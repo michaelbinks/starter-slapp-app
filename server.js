@@ -119,6 +119,8 @@ slapp.message('google', ['direct_mention', 'direct_message'], (msg, text) => {
   
   var authToken = arr[1]  
   
+  console.log(authToken)
+  
   // fire request
   var options = { method: 'POST',
    url: 'https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start',
