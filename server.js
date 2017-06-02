@@ -24,7 +24,7 @@ I will respond to the following messages:
 \`thanks\` - to demonstrate a simple response.
 \`<type-any-other-text>\` - to demonstrate a random emoticon response, some of the time :wink:.
 \`attachment\` - to see a Slack attachment message.
-\`google <auth-token>\` - to start the default instance.
+\`google <us-zone-letter> <auth-token>\` - to start the default instance.
 `
 
 //*********************************************
@@ -117,13 +117,14 @@ slapp.message('google', ['direct_mention', 'direct_message'], (msg, text) => {
     return val;
   });
   
-  var authToken = arr[1]  
+  var zone = arr[1] 
+  var authToken = arr[2] 
   
   console.log(authToken)
   
   // fire request
   var options = { method: 'POST',
-   url: 'https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-f/instances/ml-instance-1/start',
+   url: 'https://www.googleapis.com/compute/v1/projects/mylinuxproject-167719/zones/us-central1-'+ zone +'/instances/ml-instance-1/start',
    headers: 
     { 'cache-control': 'no-cache',
       authorization: 'Bearer ' + authToken } 
